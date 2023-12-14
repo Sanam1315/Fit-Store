@@ -4,84 +4,404 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fit Store</title>
-<link rel="shortcut icon" href="../mywork/FitStore logo.jpeg" type="image/x-icon">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="./FitStore logo.jpeg" type="image/x-icon">
     <style>
-      h1 {
-        text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
-        text-align: center;
-        font-style: initial;
-      }
+      *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    }
 
-      #button {
-        text-align: center;
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: #F0F0F0;
+    color: #213555;
+}
+ img{
+  border-radius: 5px;
+}
+#header{
+    position: fixed;
+    height: 12vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 10;
+    background-color: #F0F0F0;
+}
+#store-name h1{
+  color: #213555;
+  font-size: 2.5vmax;
+}
+#main-heads{
+    display: flex;
+    gap: 5vw;
+}
+.main-nav{
+    font-size: 1.5vmax;
+    font-weight: 600;
+    text-decoration: none;
+    color: #213555;
+}
+.pages{
+    background-color: #F0F0F0;
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    top: 12%;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller{
+    height: 10vh;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
 
-        padding: auto;
-      }
-      #yes {
-        background-color: orange;
-        border-width: 0.1px;
-      }
-      #Pass {
-        border-color: rgb(255, 185, 56);
-      }
-      #legend {
-        text-align: center;
-      }
-      .new {
-        color: black;
-      }
+}
+.scroller-in{
+    display: inline-block;
+    overflow-x: auto;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration:10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.scroller-in h4{
+    display: inline-block;
+    font-size: 5vw;
+    font-weight: 500;
+    transition: all linear 0.5s;
+    margin-left: 10px;
+    color: transparent;
+    -webkit-text-stroke: 1px #4F709C;
+}
+.scroller-in h4:hover{
+    color: rgb(229, 210, 131);
+}
+@keyframes scroll{
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+#purity-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+#purity{
+    height: 80vh;
+    width: 80%;
+    padding: 2vmax;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px grey;
+    margin: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#purity-text{
+    height: 80vh;
+    width: 40%;
+}
+#purity-text h3{
+    font-size: 3vmax;
+    margin-bottom: 2vh;
+}
+#purity-text p{
+    font-size: 1.5vmax;
+    line-height: 1.5vmax;
+    font-weight: 500;
+    color: #4F709C;
+}
+#know-more-button{
+    padding: 1vh 2vw;
+    margin-top: 5vh;
+    border-radius: 1vmax;
+    background-color:inherit;
+}
+#know-more-button a{
+    font-weight: 600;
+    text-decoration: none;
+        color: red;
+    }
+#purity-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 50vw;
+}
+#purity-img img{
+    height: 40vh;
+    width: 30vw;
+    transition: all linear 0.5s;
+}
+#purity-img img:hover{
+    height: 80%;
+    width: 90%;
+}
+#page2{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    margin-top: 5vh;
+}
+#our-products{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#our-products h2{
+    margin-bottom: 2vh;
+}
+#our-products p{
+    width: 50%;
+    text-align: center;
+    font-size: 1vmax;
+    font-weight: 600;
+    color: #4F709C;
+    line-height: 3vh;
+}
+
+#cards{
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.box-card{
+    height: 48vh;
+        width: 24vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: all linear 0.5s;
+    background-color: #F0F0F0;
+}
+.card1-1{
+    height: 47.7vh;
+        width: 23.8vw;
+    position: absolute;
+    opacity: 1;
+}
+.card1-1 img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.card2-2 {
+    height: 47.7vh;
+    width: 23.8vw;
+    text-align: center;
+    font-size: 1.2vmax;
+}
+.card2-2 p{
+    color: #4F709C;
+}
+.card1-1:hover{
+    opacity: 0;
+}
+.box-card:hover{
+    transform: skew(10deg, 5deg);
+}
+#page3{
+    height: 70vh;
+    width: 100%;
+    padding-top: 10vh;
+}
+#product-link{
+    height: 75%;
+    width: 30%;
+    margin-left:34.6vw;
+    box-shadow: 0 0 20px 5px grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    font-size: 1.5vmax;
+}
+#product-link p{
+    text-align: center;
+    font-weight: 700;
+}
+#product-link a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(255, 0, 0);
+}
+#product-link button{
+    height: 4vh;
+    width: 7vw;
+    border-radius: 1vw;
+    background-color: #F0F0F0;
+    font-size: 1vmax;
+}
+#page3 footer{
+    margin-top:10vh;
+    border-top: 1px solid rgba(0, 0, 0, 0.386);
+    font-size: 1.5vmax;
+}
     </style>
   </head>
   <body>
-    <div>
-      <header>
-        <center><h1>Login</h1></center>
-      </header>
+    <div class="container">
+      <div id="header">
+        <section id="store-name">
+          <h1>Fit Store</h1>
+        </section>
+        <section id="main-heads">
+          <a href="index.html" class="main-nav">Home</a>
+          <a href="../SuryaWork/index.html" class="main-nav" class="main-nav">Login</a>
+          <a href="../SuryaWork/New.html" class="main-nav">SignUp</a>
+        </section>
+      </div>
+      <div class="pages" id="page1">
+        <div id="scroller">
+          <div class="scroller-in">
+            <h4>YOUR</h4>
+            <h4>FITNESS</h4>
+            <h4>JOURNEY</h4>
+            <h4>BEGINS</h4>
+            <h4>HERE</h4>
+          </div>
+          <div class="scroller-in">
+            <h4>YOUR</h4>
+            <h4>FITNESS</h4>
+            <h4>JOURNEY</h4>
+            <h4>BEGINS</h4>
+            <h4>HERE</h4>
+          </div>
+        </div>
+        <div id="purity-container">
+          <div id="purity">
+            <section id="purity-text">
+              <h3>Embracing the Essence of Purity</h3>
+              <p>
+                Embracing the essence of purity is a profound journey of
+                self-discovery and spiritual enlightenment. It transcends the
+                physical and delves into the realm of the soul. Purity signifies
+                a pristine state of being, untainted by worldly distractions and
+                negativity. It's a commitment to integrity, truth, and
+                authenticity in our thoughts and actions. By embracing purity,
+                we find clarity in our purpose and a connection to the deeper,
+                universal truths. It's about cleansing our hearts, minds, and
+                intentions, letting go of impurities that cloud our judgment and
+                hinder personal growth.
+              </p>
+              <button type="button" id="know-more-button">
+                  <a href="aboutUs.html">Explore More</a>
+                </button>
+            </section>
+            <section id="purity-img">
+              <img src="purity.jpg" alt="" />
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="pages" id="page2">
+        <div id="our-products">
+          <h2>About Our Products</h2>
+          <p>
+            Our products are proudly Non-GMO, ensuring the highest quality and
+            natural goodness. We prioritize your health and the environment,
+            offering a range of options that are free from genetically modified
+            organisms. Taste the pure difference in every bite.
+          </p>
+        </div>
+        <div id="cards">
+          <div id="box-card1" class="box-card">
+            <div class="card1-1">
+              <img
+                src="1698835845118.jpg"
+                alt=""
+              />
+            </div>
+            <div class="card2-2">
+              <h3>Non-GMO Protiens</h3>
+              <p>
+                Non-GMO protein is a health-conscious choice that ensures the
+                source crops have not been genetically modified. This natural
+                and sustainable protein option aligns with consumer demands for
+                clean, unaltered food. It maintains the integrity of the plant's
+                genetic makeup, contributing to environmental sustainability and
+                reducing potential health concerns. Non-GMO protein is popular
+                among those seeking pure, wholesome nutrition while supporting
+                ethical farming practices and biodiversity.
+              </p>
+            </div>
+          </div>
+          <div id="box-card2" class="box-card">
+            <div class="card1-1">
+              <img src="nongmo-peanut butter.webp" alt="" />
+            </div>
+            <div class="card2-2">
+              <h3>Non-MGO Peanut Butter</h3>
+              <p>
+                Non-GMO peanut butter is crafted from peanuts that haven't been
+                genetically modified. This ensures a wholesome spread with no
+                artificial genetic alterations. Non-GMO peanut butter aligns
+                with a growing demand for natural, unadulterated food products,
+                providing a delicious and healthier option for consumers. It
+                supports sustainable agriculture and biodiversity, making it a
+                popular choice for those who value both taste and ethical food
+                sourcing.
+              </p>
+            </div>
+          </div>
+          <div id="box-card3" class="box-card">
+            <div class="card1-1">
+              <img
+                src="1698835845136.jpg"
+                alt=""
+              />
+            </div>
+            <div class="card2-2">
+              <h3>Non-GMO Multivitamins</h3>
+              <p>
+                Non-GMO multivitamins are dietary supplements formulated without
+                genetically modified organisms. These supplements provide a
+                reliable source of essential vitamins and minerals, free from
+                genetic alterations. They cater to health-conscious consumers
+                seeking clean and natural products, ensuring their nutritional
+                needs are met while aligning with non-GMO principles. Non-GMO
+                multivitamins are a responsible choice for individuals looking
+                to support their health without compromising on the integrity of
+                their supplements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="page3" class="pages">
+      <div id="product-link">
+          <p>See Non-GMO Protien from here</p>
+          <button><a href="protien.html">view more</a></button>
+          <p>See Non-GMO Peanut Butter from here</p>
+          <button><a href="peanutButter.html">view more</a></button>
+          <p>See Non-GMO Multivitamins from here</p>
+          <button><a href="multivitamins.html">view more</a></button>
+      </div>
+      <footer>&#169 2023 Fitness Store.All rights reserved.</footer>
     </div>
-    <fieldset id="login">
-      <h2>Enter your details below</h2>
-
-      <b>
-        <form id="style">
-          <label for="enter">Emai or mobile phone number</label> <br />
-          <input
-            type="text"
-            name="text"
-            id="enter"
-            size="125px"
-            placeholder="Eg:abcd@gmail.com or 1234567890"
-          />
-        </form>
-      </b>
-      <h4 id="Pass">
-        Password
-        <span id="man"> <a href="abcd.com">Forgot Password</a> </span>
-        <input
-          type="password"
-          name=""
-          id="Pass"
-          size="125px"
-          placeholder="Enter password here..."
-        />
-      </h4>
-      <section id="button"><button id="yes">Login</button></section>
-      <section>
-        <table>
-          <tr>
-            <td><input type="checkbox" name="check" id="click" /></td>
-            <td>Keep me signed in.</td>
-            <td><a href="abcd.com">Details</a></td>
-            <td><select name="" id=""></select></td>
-          </tr>
-        </table>
-      </section>
-      <br />
-      <fieldset id="legend">
-        <legend class="new">New to Fir Store?</legend>
-        <button>
-          <a href="./New.html"> Create your account </a>
-        </button>
-      </fieldset>
-    </fieldset>
+    </div>
   </body>
 </html>
